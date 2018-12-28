@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>职位管理</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
+    <style>
+       .tab img{
+          width:50px;
+        }
+        .id{
+          display: none;
+        }
+    </style>
+</head>
+<body style="min-width:1200px">
+    <header></header>
+    <div class="container">
+        <div style="width:1100px;margin:auto;height:25px">
+            <span style="float:left">职位管理</span>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addModal" style="float:right">添加</button>
+        </div>
+        <table class="table table-bordered" style="width:1100px;margin:20px;">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>公司logo</th>
+                    <th>职位名称</th>
+                    <th>公司名称</th>
+                    <!-- <th>工作经验</th>
+                    <th>职位类型</th> -->
+                    <th>工作地点</th>
+                    <th>职位薪资</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="tab">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>                   
+                    <td>1</td>
+                    <td>1</td>
+                    <td><a href="javascript:;" class="update" data-toggle="modal" data-target="#updateModal">修改</a><a href="javascript:;" class="del">删除</a></td>
+                </tr> -->
+            </tbody>
+        </table>
+        <nav style="float:right">
+            <ul class="pagination page">
+              <li class="active"><a href="javascript:;">1</a></li>
+              <li><a href="javascript:;">2</a></li>
+              <li><a href="javascript:;">3</a></li>
+              <li><a href="javascript:;">4</a></li>
+              <li><a href="javascript:;">5</a></li>
+            </ul>
+        </nav>      
+    </div>
+     <!---添加-->
+     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="addModalLabel">添加职位</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-add" id="add-form">
+                <div class="form-group">
+                  <label for="addLogo">LOGO</label>
+                  <input type="file" class="form-control" name="logo" id="addLogo">
+                </div>
+                <div class="form-group">
+                  <label for="addCompany">公司名称</label>
+                  <input type="text" class="form-control" name="company" id="addCompany" placeholder="请输入公司名称">
+                </div>
+                <div class="form-group">
+                  <label for="addPosition">职位名称</label>
+                  <input type="text" class="form-control" name="position" id="addPosition" placeholder="请输入职位">
+                </div>
+                <div class="form-group">
+                  <label for="addSalary">薪资</label>
+                  <input type="text" class="form-control" name="salary" id="addSalary" placeholder="请输入薪资">
+                </div>
+                <div class="form-group">
+                  <label for="addAddress">工作地点</label>
+                  <input type="text" class="form-control" name="address" id="addAddress" placeholder="请输入工作地点">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary btn-add">添加</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- 修改 -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="updateModalLabel">添加职位</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-update">
+                <div class="form-group" style="display: none">
+                  <label for="addId">_id</label>
+                  <input type="text" class="form-control" name="_id" id="updateId">
+                </div>
+                <div class="form-group">
+                  <label for="updateLogo">LOGO</label>
+                  <input type="file" class="form-control" name="logo" id="updateLogo">
+                </div>
+                <div class="form-group">
+                  <label for="updateCompany">公司名称</label>
+                  <input type="text" class="form-control" name="company" id="updateCompany" placeholder="请输入公司名称">
+                </div>
+                <div class="form-group">
+                  <label for="updatePosition">职位名称</label>
+                  <input type="text" class="form-control" name="position" id="updatePosition" placeholder="请输入职位">
+                </div>
+                <div class="form-group">
+                  <label for="updateSalary">薪资</label>
+                  <input type="text" class="form-control" name="salary" id="updateSalary" placeholder="请输入薪资">
+                </div>
+                <div class="form-group">
+                  <label for="updateAddress">工作地点</label>
+                  <input type="text" class="form-control" name="address" id="updateAddress" placeholder="请输入工作地点">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary" id="btn-update">修改</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="/lib/requirejs/require.min.js" data-main="/js/posit"></script>
+</body>
+</html>

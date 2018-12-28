@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拉勾网</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/lib/swiper/css/swiper.min.css">
+    <style type="text/css">
+		.swiper-container {
+		    width: 600px;
+		    height: 300px;
+            margin:50px auto;
+		}  
+	</style>
+</head>
+<body style="min-width:1200px">
+   <!--  导航   -->
+    <header></header>
+    <div class="alert alert-info" role="alert" style="width:1000px;margin:auto">基于 NodeJS + EJS + MongoDB 的拉勾网的后台系统</div>
+    <div class="container">    
+            <!-- 轮播图 -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background: #f00;">Slide 1</div>
+                  <div class="swiper-slide" style="background: #f0f;">Slide 2</div>
+                  <div class="swiper-slide" style="background: #0f0;">Slide 3</div>
+              </div>
+              <!-- 如果需要分页器 -->
+              <div class="swiper-pagination"></div>
+              
+              <!-- 如果需要导航按钮 -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              
+              <!-- 如果需要滚动条 -->
+              <div class="swiper-scrollbar"></div>
+             </div>
+    </div><!-- /.container -->
+</body>
+<script src="/lib/requirejs/require.min.js" data-main="/js/index"></script>
+</html>
